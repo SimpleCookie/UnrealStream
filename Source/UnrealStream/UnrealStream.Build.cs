@@ -6,7 +6,7 @@ public class UnrealStream : ModuleRules
 {
 	public UnrealStream(TargetInfo Target)
 	{
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "OpenCV"});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

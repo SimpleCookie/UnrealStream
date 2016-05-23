@@ -2,10 +2,14 @@
 
 #pragma once
 
+#include <mutex>
+#include "NetworkServer.h"
+#include <opencv/cv.hpp>
+#include <opencv2/core/core.hpp>		// Basic OpenCV structures (cv::Mat)
+#include <opencv2/highgui/highgui.hpp>	// Video write
 #include <stdio.h>
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "StreamHelper.generated.h"
-
 /**
  * 
  */
@@ -22,9 +26,14 @@ class UNREALSTREAM_API UStreamHelper : public UBlueprintFunctionLibrary
 	static char * buffer;
 	static size_t result;
 	static size_t counter;
+	static FColor *PixelBeginning;
+	static cv::VideoWriter output_cap;
+
+	//static NetworkServer NS;
 	//UPROPERTY(Category = HeightMap, EditAnywhere)
 	//UTextureRenderTarget2D* RenderTarget;
 public:
+
 	UFUNCTION(BlueprintCallable, Category = "HeightMap|GetColorBuffer")
 		static TArray<FColor> GetColorBuffer(UTextureRenderTarget2D* RenderTarget);
 
@@ -36,6 +45,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "HeightMap|StopStream")
 		static void StopStream();
+
 
 
 };

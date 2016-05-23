@@ -35,6 +35,9 @@
 *.opensdf
 *.sdf
 
+# Too large files
+*.db
+
 # Precompiled Assets
 SourceArt/**/*.png
 SourceArt/**/*.tga
